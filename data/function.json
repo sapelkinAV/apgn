@@ -1,0 +1,9 @@
+{
+  "description": "nameOfThePackage",
+  "handler": "nameOfThePackage.Function::handler",
+  "runtime": "java",
+  "hooks": {
+    "build": "gradle build",
+    "clean": "gradle clean"
+  }
+}
