@@ -2,7 +2,7 @@
 ## apkt = apex + kotlin
 Simple tool for generation apex kotlin function
 ## Install
-go get github.com/sapelkinAV/apkt
+go get github.com/sapelkinAV/apkt  
 //then run go install in GOPATH/src/github.com/sapelkinAV/apkt  
 //You are good)  
 ## Usage
