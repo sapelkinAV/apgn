@@ -18,7 +18,7 @@ func writeToFile(path string,content string) {
 	f,err := os.Create(path)
 	check(err)
 	f.WriteString(content)
-	defer f.Close()
+	f.Close()
 }
 
 func getStringFromBindata(path string) string  {

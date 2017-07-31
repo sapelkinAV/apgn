@@ -6,21 +6,18 @@ import (
 	"os"
 )
 
-
-
-
-func createKotlinFunction(path string) {
+func createJavaFunction(path string) {
 	const packageTamplateName string = "nameOfThePackage"
 	const functionTemplateName string = "Function"
 
-	kotlinFunction := getStringFromBindata("data/kotlin/Function.kt")
+	javaFunction := getStringFromBindata("data/java/Function.java")
 	var functionName string = strings.Title(path) +"Handler"
 	var packageName string = "main"
 
-	kotlinFunction = strings.Replace(kotlinFunction,functionTemplateName,functionName, 1)
-	kotlinFunction = strings.Replace(kotlinFunction,packageTamplateName,packageName, 1)
+	javaFunction = strings.Replace(javaFunction,functionTemplateName,functionName, 1)
+	javaFunction = strings.Replace(javaFunction,packageTamplateName,packageName, 1)
 
-	functionJson := getStringFromBindata("data/kotlin/function.json")
+	functionJson := getStringFromBindata("data/java/function.json")
 	functionJson = strings.Replace(functionJson,packageTamplateName,packageName, 2)
 	functionJson = strings.Replace(functionJson,functionTemplateName,functionName, 2)
 
@@ -33,10 +30,10 @@ func createKotlinFunction(path string) {
 	createDir(path)
 	createDir(path + "/src")
 	createDir(path+"/src/main")
-	createDir(path+"/src/main/kotlin")
+	createDir(path+"/src/main/java")
 
 
-	writeToFile(path + "/build.gradle", getStringFromBindata("data/kotlin/build.gradle"))
-	writeToFile(path + "/src/main/kotlin/" + functionName + ".kt", kotlinFunction)
+	writeToFile(path + "/build.gradle", getStringFromBindata("data/java/build.gradle"))
+	writeToFile(path + "/src/main/java/" + functionName + ".java", javaFunction)
 	writeToFile(path + "/function.json",functionJson)
 }
