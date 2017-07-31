@@ -1,4 +1,4 @@
-# apkt
+# apgn
 ## apgn = apex + gen(erate functions)
 Simple tool for generation apex functions  
 Now supporting kotlin, java, nodejs
