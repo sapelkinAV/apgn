@@ -1,6 +1,3 @@
-/**
- * Created by sapelkinav on 31/07/2017.
- */
 'use strict';
 
 console.log('starting function');

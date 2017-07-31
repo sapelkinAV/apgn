@@ -9,9 +9,13 @@ func main() {
 
 
 	nameOfFunc := os.Args[2]
-	createJavaFunction(nameOfFunc)
-
-
-
+	switch os.Args[1] {
+	case "kt":
+		createKotlinFunction(nameOfFunc)
+	case "jv":
+		createJavaFunction(nameOfFunc)
+	case "js":
+		createNodeFunction(nameOfFunc)
+	}
 
 }
