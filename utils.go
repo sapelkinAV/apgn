@@ -35,7 +35,7 @@ func addFuncToSettingsGradle(funcname string) {
 	if _, err := os.Stat(absPath); err == nil {
 		f, err := os.OpenFile("settings.gradle", os.O_APPEND|os.O_WRONLY, 0600)
 		check(err)
-		if _, err = f.WriteString("include " + "'functions/"+funcname+"'"); err != nil {
+		if _, err = f.WriteString("include " + "'functions/"+funcname+"'\n"); err != nil {
 			panic(err)
 		}
 	}
