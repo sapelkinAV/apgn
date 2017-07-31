@@ -24,6 +24,7 @@ func createKotlinFunction(path string) {
 	functionJson = strings.Replace(functionJson,packageTamplateName,packageName, 2)
 	functionJson = strings.Replace(functionJson,functionTemplateName,functionName, 2)
 
+	addFuncToSettingsGradle(path)
 	absPath, _ := filepath.Abs("./functions")
 	if _, err := os.Stat(absPath); err == nil {
 		path = absPath+"/"+path

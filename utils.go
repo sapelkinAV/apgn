@@ -1,6 +1,9 @@
 package main
 
-import "os"
+import (
+	"os"
+	"path/filepath"
+)
 
 func check(e error) {
 	if e != nil {
@@ -25,4 +28,17 @@ func getStringFromBindata(path string) string  {
 	data, err := Asset(path)
 	check(err)
 	return string(data[:])
+}
+
+func addFuncToSettingsGradle(funcname string) {
+	absPath, _ := filepath.Abs("./functions")
+	if _, err := os.Stat(absPath); err == nil {
+		f, err := os.OpenFile("settings.gradle", os.O_APPEND|os.O_WRONLY, 0600)
+		check(err)
+		if _, err = f.WriteString("include " + "'functions/"+funcname+"'"); err != nil {
+			panic(err)
+		}
+	}
+
+
 }
