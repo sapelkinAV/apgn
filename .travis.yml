@@ -7,4 +7,5 @@ install:
   - go install
 script:
   - apgn kt myfunc
+  - ls -l
 
