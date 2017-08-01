@@ -1,0 +1,9 @@
+language: go
+
+go:
+  - master
+
+install:
+  - go install
+script:
+  - apgn kt myfunc
